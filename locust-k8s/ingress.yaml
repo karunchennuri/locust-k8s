@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: locust-ingress
+  namespace: locust-npe
+  annotations:
+    kubernetes.io/ingress.class: std-ingress-class
+    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  tls:
+    - hosts: 
+        - locust-master.px-stg1101.pks.t-mobile.com
+  rules:
+  - host: locust-master.px-stg1101.pks.t-mobile.com
+    http:
+      paths:
+      - backend:
+          serviceName: locust-master
+          servicePort: 8089
+        #path: /locust
+        path: /
+
+
