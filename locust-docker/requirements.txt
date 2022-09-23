@@ -16,7 +16,7 @@ MarkupSafe==1.1.0
 msgpack==0.5.6
 opencensus==0.1.8
 opentracing==2.0.0
-protobuf==3.6.1
+protobuf==3.18.3
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
 pycparser==2.19
